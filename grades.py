@@ -29,6 +29,9 @@ while True:
     print(grades)
     end = input('Done? Yes or No ')
     if end.lower() == 'yes':
+        print(f"{'Name':<10}{'Average':<10}{'GPA':<10} ")
+        for grade in grades:
+            print(f"{student_name:<10}{average:<10}{gpa:<10}")
         break
     elif end.lower() == 'no':
         None
