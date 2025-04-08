@@ -1,3 +1,5 @@
+import json
+
 contacts = {
     'Jason' : {'phone': '0244499315', 'email':'agyemanjasonnhyira@gmail.com'},
     'Abby' : {'phone': '0244498215', 'email':'abbyjasonnhyira@gmail.com'},
@@ -59,4 +61,6 @@ while True:
     elif b.lower() == 'delete':
         a.delete()
     elif b.lower() == 'end':
+        with open('contacts.txt', 'w') as file:
+            json.dump(contacts, file)
         break
