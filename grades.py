@@ -12,9 +12,9 @@ def grade_point(average):
     elif 69 < average < 80:
         return 'C'
     elif 59 < average < 70:
-        return 'B'
+        return 'D'
     elif 49 < average < 60:
-        return 'B'
+        return 'E'
     elif average < 50:
         return 'F'
 
@@ -23,7 +23,7 @@ while True:
     first_grade = int(input('Type first grade '))
     second_grade = int(input('Type second grade '))
     third_grade = int(input('Type third grade '))
-    average = avg(first_grade, second_grade, third_grade)
+    average = int(avg(first_grade, second_grade, third_grade))
     gpa = grade_point(average)
     grades[student_name] = [first_grade, second_grade, third_grade, average, gpa]
     print(grades)
@@ -31,7 +31,7 @@ while True:
     if end.lower() == 'yes':
         print(f"{'Name':<10}{'Average':<10}{'GPA':<10} ")
         for grade in grades:
-            print(f"{student_name:<10}{average:<10}{gpa:<10}")
+            print(f"{grade:<10}{grades[grade][3]:<10}{grades[grade][4]:<10}")
         break
     elif end.lower() == 'no':
         None
