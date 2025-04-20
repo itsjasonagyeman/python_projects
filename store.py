@@ -15,8 +15,11 @@ class ShoppingCart:
         self.cart.append(product)
     
     def view_cart(self):
-        for i, product in enumerate(self.cart):
-            print(f'{i + 1}: {product}')
+        if len(self.cart) > 0:
+            for i, product in enumerate(self.cart):
+                print(f'{i + 1}. {product}')
+        else:
+            print('No products in cart')
 
     def remove(self, index):
         if 0 <= index < len(self.cart):
@@ -24,3 +27,12 @@ class ShoppingCart:
             print('Item removed!')
         else:
             print('Item does not exist')
+
+shop = ShoppingCart()
+
+shop.addtocart('Tomato')
+shop.addtocart('PS5')
+shop.addtocart('Oranges')
+shop.view_cart()
+shop.remove(0)
+shop.view_cart()
